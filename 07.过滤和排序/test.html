@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <div id="app">
+    <p>请输入搜索关键字：<input type="text" v-model="name"></p>
+
+    <ul>
+      <li v-for="(p, index) in filters" :key="index">
+        {{ index }} -- {{ p.name }} -- {{ p.age }}
+      </li>
+    </ul>
+
+    <h2>
+      <button @click="setSortType(1)">年龄升序</button>
+      <button @click="setSortType(2)">年龄降序</button>
+      <button @click="setSortType(0)">原本顺序</button>
+    </h2>
+  </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+
+  const vm = new Vue({
+    el:'#app',
+    data:{
+      sortType:0, // 排序初始值
+      name:'',
+      persons:[
+        {name:'Tom', age:12},
+        {name:'Jerry', age:15},
+        {name:'John', age:13},
+        {name:'Marry', age:16},
+        {name:'Rose', age:11}
+      ]
+    },
+    // 计算属性
+    computed:{
+      filters(){
+        let {name, persons, sortType} = this
+        // 过滤
+        persons = persons.filter(function (p, index) {
+          return p.name.indexOf(name) != -1
+        })
+        // 排序
+        if(sortType != 0){
+          persons.sort(function (p1, p2) {
+            if(sortType == 1){
+              return p1.age - p2.age
+            }else{
+              return p2.age - p1.age
+            }
+          })
+        }
+        // 返回过滤后的数据
+        return persons
+      }
+    },
+    // 事件方法
+    methods:{
+      // 改变排序方式
+      setSortType(sortType){
+        this.sortType = sortType
+      }
+    }
+  })
+
+</script>
+</html>

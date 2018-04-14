@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h2>绑定监听</h2>
+    <p><button @click="test1">test1</button></p>
+    <!-- 隐含对象：$event -->
+    <p><button @click="test2('Hello', $event)">test2</button></p>
+
+    <h2>事件修饰符</h2>
+    <!-- 阻止事件默认行为：prevent -->
+    <p><a href="http://www.baidu.com" @click.prevent="test3">百度一下</a></p>
+    <!-- 停止事件冒泡：stop -->
+    <div style="width: 200px; height: 200px; background:#0ff;" @click="test4">
+      <div style="width: 100px; height: 100px; background:#0f0;" @click.stop="test5"></div>
+    </div>
+
+    <h2>按键修饰符</h2>
+    <!-- Enter键触发 -->
+    <p><input type="text" @keyup.enter="test6"></p>
+    <!-- a键触发 -->
+    <p><input type="text" @keyup.65="test6"></p>
+  </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+
+  const vm = new Vue({
+    el:'#app',
+    data:{
+
+    },
+    methods:{
+      test1(e){
+        alert(e.target.innerHTML)
+      },
+      test2(val, e){
+        alert(val + ':' + e.target.innerHTML)
+      },
+      test3(e){
+        // e.preventDefault()
+        alert(e.target.innerHTML)
+      },
+      test4(){
+        alert('outer')
+      },
+      test5(e){
+        // e.stopPropagation()
+        alert('inner')
+      },
+      test6(e){
+        alert(e.target.value + ':' + e.keyCode) // keyCode：键码
+      }
+    }
+  })
+
+</script>
+</html>

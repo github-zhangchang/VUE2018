@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b323e2ec-5eeb-4f9a-881d-6629c6d65ff2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/05.条件渲染/test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/06.列表渲染/test.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/07.过滤和排序/test.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/08.事件处理/test.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -46,6 +46,8 @@
         <option value="$PROJECT_DIR$/03.计算属性和监视/test.html" />
         <option value="$PROJECT_DIR$/05.条件渲染/test.html" />
         <option value="$PROJECT_DIR$/06.列表渲染/test.html" />
+        <option value="$PROJECT_DIR$/07.过滤和排序/test.html" />
+        <option value="$PROJECT_DIR$/08.事件处理/test.html" />
       </list>
     </option>
   </component>
@@ -205,7 +207,7 @@
       <option name="presentableId" value="Default" />
       <updated>1523096105008</updated>
       <workItem from="1523096106216" duration="7355000" />
-      <workItem from="1523669414942" duration="16440000" />
+      <workItem from="1523669414942" duration="20339000" />
     </task>
     <task id="LOCAL-00001" summary="VUE的简单使用、模板语法">
       <created>1523678755473</created>
@@ -221,11 +223,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523698680749</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="条件渲染、列表渲染">
+      <created>1523701605981</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1523701605981</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23795000" />
+    <option name="totallyTimeSpent" value="27694000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1370" height="738" extended-state="0" />
@@ -260,7 +269,8 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="VUE的简单使用、模板语法" />
     <MESSAGE value="计算属性和监视、class和style绑定" />
-    <option name="LAST_COMMIT_MESSAGE" value="计算属性和监视、class和style绑定" />
+    <MESSAGE value="条件渲染、列表渲染" />
+    <option name="LAST_COMMIT_MESSAGE" value="条件渲染、列表渲染" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -358,6 +368,25 @@
         <state relative-caret-position="168">
           <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/07.过滤和排序/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/08.事件处理/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
