@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <div id="app">
+    <p><button @click="kill">KILL VUE</button></p>
+    <p v-if="isShow">VUE.. VUE.. VUE..</p>
+  </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+
+  const vm = new Vue({
+    el:'#app',
+    data:{
+      isShow:true
+    },
+    // TODO 1.初始化阶段
+    beforeCreate(){
+      console.log('beforeCreate');
+    },
+    created(){
+      console.log('created');
+    },
+    beforeMount(){
+      console.log('beforeMount');
+    },
+    // 生命周期方法 - 启动定时器
+    mounted(){
+      console.log('mounted');
+      this.timer = setInterval(()=>{  // 注意：this问题，必须使用箭头函数，否则this指向window
+        console.log('setInterval...');
+        this.isShow = !this.isShow
+      }, 1000)
+    },
+    // TODO 2.更新阶段
+    beforeUpdate(){
+      console.log('beforeUpdate');
+    },
+    updated(){
+      console.log('updated');
+    },
+
+    // TODO 3.销毁阶段
+    beforeDestroy(){
+      // 清除定时器一般在此方法中处理
+      clearInterval(this.timer)
+      console.log('beforeDestroy');
+    },
+    destroyed(){
+      console.log('destroyed');
+    },
+    methods:{
+      // 销毁 vue 实例
+      kill(){
+        // clearInterval(this.timer)
+        this.$destroy()
+      }
+    }
+  })
+
+</script>
+</html>

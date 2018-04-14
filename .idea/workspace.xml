@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b323e2ec-5eeb-4f9a-881d-6629c6d65ff2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/07.过滤和排序/test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/08.事件处理/test.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/09.表单输入绑定/test.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/10.vue实例生命周期/test.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -48,6 +48,8 @@
         <option value="$PROJECT_DIR$/06.列表渲染/test.html" />
         <option value="$PROJECT_DIR$/07.过滤和排序/test.html" />
         <option value="$PROJECT_DIR$/08.事件处理/test.html" />
+        <option value="$PROJECT_DIR$/09.表单输入绑定/test.html" />
+        <option value="$PROJECT_DIR$/10.vue实例生命周期/test.html" />
       </list>
     </option>
   </component>
@@ -207,7 +209,7 @@
       <option name="presentableId" value="Default" />
       <updated>1523096105008</updated>
       <workItem from="1523096106216" duration="7355000" />
-      <workItem from="1523669414942" duration="20339000" />
+      <workItem from="1523669414942" duration="25749000" />
     </task>
     <task id="LOCAL-00001" summary="VUE的简单使用、模板语法">
       <created>1523678755473</created>
@@ -230,11 +232,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523701605981</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="过滤和排序、事件处理">
+      <created>1523707005611</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1523707005611</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27694000" />
+    <option name="totallyTimeSpent" value="33104000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1370" height="738" extended-state="0" />
@@ -270,7 +279,8 @@
     <MESSAGE value="VUE的简单使用、模板语法" />
     <MESSAGE value="计算属性和监视、class和style绑定" />
     <MESSAGE value="条件渲染、列表渲染" />
-    <option name="LAST_COMMIT_MESSAGE" value="条件渲染、列表渲染" />
+    <MESSAGE value="过滤和排序、事件处理" />
+    <option name="LAST_COMMIT_MESSAGE" value="过滤和排序、事件处理" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -387,6 +397,22 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/10.vue实例生命周期/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="39" column="19" lean-forward="true" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/09.表单输入绑定/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21">
+          <caret line="50" column="22" lean-forward="true" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
