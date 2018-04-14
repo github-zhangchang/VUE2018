@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <p v-if="ok">表白成功</p>
+    <p v-else>表白失败</p>
+    <!--<p v-if="!ok">表白失败</p>-->
+
+    <p v-show="ok">求婚成功</p>
+    <p v-show="!ok">求婚失败</p>
+    <p><button @click="ok=!ok">点击切换</button></p>
+  </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+
+  const vm = new Vue({
+    el:'#app',
+    data:{
+      ok:true
+    }
+  })
+
+</script>
+</html>

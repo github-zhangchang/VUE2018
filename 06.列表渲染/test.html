@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h2>v-for 遍历数组</h2>
+    <ul>
+      <li v-for="(p, index) in persons" :key="index">
+        {{ index }} -- {{ p.name }} -- {{ p.age }} --
+        <button @click="deleteP(index)">DELETE</button>
+        <button @click="updateP(index, {name:'DDD', age:15})">UPDATE</button>
+      </li>
+    </ul>
+
+    <h2>v-for 遍历对象</h2>
+    <ul>
+      <!-- 注意：遍历对象，第一个参数是值，第二个参数是键，键值对 -->
+      <li v-for="(value, key) in persons[0]" :key="key">
+        {{ key }} -- {{ value }}
+      </li>
+    </ul>
+
+  </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+
+  const vm = new Vue({
+    el:'#app',
+    data:{
+      persons:[
+        {name:'AAA', age:11},
+        {name:'BBB', age:12},
+        {name:'CCC', age:13}
+      ]
+    },
+    methods:{
+      deleteP(index){
+        this.persons.splice(index, 1)
+      },
+      updateP(index, newP){
+//        this.persons[index] = newP        // 注意：原生方式没有实现数据绑定
+        this.persons.splice(index, 1, newP) // 变异方法实现了数据绑定
+      }
+    }
+  })
+
+</script>
+</html>
