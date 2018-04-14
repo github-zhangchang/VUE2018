@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h2>双大括号表达式</h2>
+    <p>{{ msg }}</p>
+    <p>{{ msg.toUpperCase() }}</p>
+    <p>{{ msg.toLowerCase() }}</p>
+    
+    <h2>强制数据绑定</h2>
+    <p><a href="url">点我1</a></p>
+    <p><a v-bind:href="url">点我2</a></p>
+    <p><a :href="url">点我3</a></p>
+
+    <h2>绑定事件监听</h2>
+    <p><button v-on:click="handleClick">点我一下1</button></p>
+    <p><button @click="handleClick">点我一下2</button></p>
+  </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+
+  const mvvm = new Vue({
+    el:'#app',
+    data:{
+      msg:'I Like You',
+      url:'http://www.baidu.com'
+    },
+    methods:{
+      handleClick(){
+        alert('讨厌，你点我干嘛~~')
+      }
+    }
+  })
+
+</script>
+</html>
