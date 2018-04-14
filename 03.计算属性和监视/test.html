@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <div id="app">
+    <p>姓：<input type="text" v-model="firstName"></p>
+    <p>名：<input type="text" v-model="lastName"></p>
+    <p>姓名1（单向）：<input type="text" v-model="fullName1"></p>
+    <p>姓名2（单向）：<input type="text" v-model="fullName2"></p>
+    <p>姓名3（双向）：<input type="text" v-model="fullName3"></p>
+  </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+
+  const vm = new Vue({
+    el:'#app',
+    // 初始数据
+    data(){
+      return {
+        firstName:'sun',
+        lastName:'wukong',
+        fullName2:'sun wukong'
+      }
+    },
+    // 计算属性
+    computed:{
+      // 方法
+      fullName1(){
+        return this.firstName + ' ' + this.lastName
+      },
+
+      // 对象
+      fullName3:{
+        // 获取方法
+        get(){
+          return this.firstName + ' ' + this.lastName
+        },
+        // 监视方法
+        set(value){
+          const names = value.split(' ')
+          this.firstName = names[0]
+          this.lastName = names[1]
+        }
+      }
+    },
+    // 局部监视
+    watch:{
+      firstName(value){
+        this.fullName2 = value + ' ' + this.lastName
+      }
+    }
+  })
+
+  // 全局监视
+  vm.$watch('lastName', function (value) {
+    this.fullName2 = this.firstName + ' ' + value
+  })
+
+</script>
+</html>
