@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <div id="app">
+    <h2>显示格式化时间</h2>
+    <p>当前时间：{{ currDate | dateFormat }}</p>
+    <p>当前时间：{{ currDate | dateFormat('YYYY-MM-DD') }}</p>
+    <p>当前时间：{{ currDate | dateFormat('HH:mm:ss') }}</p>
+  </div>
+</body>
+<script src="../js/vue.js"></script>
+<script src="../js/moment.js"></script>
+<script>
+  // 注意：顺序问题！
+  // 定义 Vue 过滤器
+  // Vue.filter('dateFormat', function (value, format) {
+  Vue.filter('dateFormat', function (value, format='YYYY-MM-DD HH:mm:ss') {// ES6默认值
+    //1. return moment(value).format('YYYY-MM-DD HH:mm:ss');
+    //2. return moment(value).format(format || 'YYYY-MM-DD HH:mm:ss');
+    //3. 如果没有指定格式，使用默认值，否则使用指定格式
+    return moment(value).format(format);
+  })
+
+  const vm = new Vue({
+    el:'#app',
+    data:{
+      currDate:new Date()
+    }
+  })
+
+</script>
+</html>

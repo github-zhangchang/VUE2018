@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+
+    /* 原理：vue解析之前页面中存在（隐藏有效），解析完成之后vue自动删除（隐藏无效） */
+    [v-cloak]{
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- v-cloak：解决闪现表达式的问题 -->
+    <p v-cloak>{{ msg }}</p>    <!-- 解析成文本 -->
+    <p v-text="msg"></p><!-- textContent：解析成文本 -->
+    <p v-html="msg"></p><!-- innerHTML：  解析成标签 -->
+
+    <p ref="content">ref标识符</p>
+    <p><button @click="showContent">提示信息</button></p>
+
+  </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+
+  // 阻塞方法 - 检测{{}}表达式的闪现问题！
+  // 重新打开新的页面才能查看
+  alert('-----------')
+
+  const vm = new Vue({
+    el:'#app',
+    data:{
+      msg:'<a href="https://www.baidu.com">百度一下</a>'
+    },
+    methods:{
+      showContent(){
+         alert(this.$refs.content.textContent)
+        // alert(this.$refs.content.innerHTML)
+        // alert(this.$refs.content.innerText)
+        // alert(this.$refs.content.nodeName)
+      }
+    }
+  })
+
+</script>
+</html>
