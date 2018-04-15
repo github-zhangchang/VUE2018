@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+
+    .bounce-enter-active{
+      animation: myAnimation .5s;
+    }
+    .bounce-leave-active{
+      animation: myAnimation .5s reverse; /* 反转过渡效果 */
+    }
+    @keyframes myAnimation{
+      0%{
+        transform: scale(0);
+      }
+      50%{
+        transform: scale(1.5);
+      }
+      100%{
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <p><button @click="show=!show">Toggle</button></p>
+    <!-- lorem + Tab键快速生成测试文本 -->
+    <transition name="bounce">
+      <!-- 注意：文本较少时，块级元素的缩放效果存在问题，此时可设置为内联块元素解决！ -->
+      <p v-show="show" style="display: inline-block">
+        Lorem ipsum dolor sit amet
+      </p>
+    </transition>
+  </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+
+  const vm = new Vue({
+    el:'#app',
+    data:{
+      show:true
+    }
+  })
+
+</script>
+</html>

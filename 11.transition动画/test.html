@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    /* 动画执行过程中的样式（进入、离开） */
+    .fade-enter-active, .fade-leave-active{
+      transition: opacity 2s;
+    }
+    /* 注意：默认显示，只需设置隐藏时的样式即可 */
+    .fade-enter, .fade-leave-to{
+      opacity: 0;
+    }
+
+    /* 动画过渡的时间 */
+    .move-enter-active{
+      transition: all 1s; /* 进入的过渡时间1s */
+    }
+    .move-leave-active{
+      transition: all 2s; /* 离开的过渡时间2s */
+    }
+    /* 动画过渡的效果 */
+    .move-enter, .move-leave-to{
+      opacity: 0;
+      transform: translateX(30px);  /* 向右移动30px */
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- 在目标元素最外层添加transition标签，并指定name -->
+    <transition name="fade">
+      <p v-show="isShow">淡入淡出</p>
+    </transition>
+    <p><button @click="isShow=!isShow">Toggle</button></p>
+  </div>
+
+  <div id="app2">
+    <!-- 在目标元素最外层添加transition标签，并指定name -->
+    <transition name="move">
+      <p v-show="isShow">淡入淡出 + 移动</p>
+    </transition>
+    <p><button @click="isShow=!isShow">Toggle</button></p>
+  </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+
+  const vm = new Vue({
+    el:'#app',
+    data:{
+      isShow:true
+    }
+  })
+
+  const vm2 = new Vue({
+    el:'#app2',
+    data:{
+      isShow:true
+    }
+  })
+
+</script>
+</html>
