@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <div id="app">
+    <!-- 实现 v-text 的相同效果：并且大小写 -->
+    <p v-textupper="msg"></p>
+    <p v-textlower="msg"></p>
+  </div>
+
+  <div id="app2">
+    <!-- 实现 v-text 的相同效果：并且大小写 -->
+    <p v-textupper="msg"></p>
+    <!-- 注意：无效，textlower是一个局部指令 -->
+    <p v-textlower="msg"></p>
+  </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+
+  // 注册全局指令：全局有效
+  Vue.directive('textupper', function (el, binding) {
+    // el:指令属性所在的标签
+    // binding:包含指令数据的对象
+    el.textContent = binding.value.toUpperCase()
+  })
+
+  const vm = new Vue({
+    el:'#app',
+    data:{
+      msg:'I Like You'
+    },
+    // 注册局部指令：当前实例有效
+    directives:{
+      textlower:function (el, binding) {
+        el.textContent = binding.value.toLowerCase()
+      }
+    }
+  })
+
+  const vm2 = new Vue({
+    el:'#app2',
+    data:{
+      msg:'I Like You'
+    }
+  })
+</script>
+</html>

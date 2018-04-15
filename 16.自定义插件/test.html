@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <div id="app">
+    <p v-my-directive="msg"></p>
+  </div>
+</body>
+<script src="../js/vue.js"></script>
+<script src="../js/vue-myplugin.js"></script>
+<script>
+  // TODO 使用自定义插件
+  // 否则报错：Failed to resolve directive: my-directive
+  Vue.use(MyPlugin) // 内部调用 install 安装方法
+
+  const vm = new Vue({
+    el:'#app',
+    data:{
+      msg:'Hello~~'
+    }
+  })
+
+  // 调用全局方法
+  Vue.myGlobalMethod()
+  // 调用实例方法
+  vm.$myMethod()
+
+</script>
+</html>
